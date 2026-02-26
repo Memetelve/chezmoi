@@ -1,0 +1,15 @@
+# Ignore volatile/runtime data in source state
+
+# Nested project internals under ~/.config/bin
+dot_config/bin/dot_git/**
+dot_config/bin/dot_venv/**
+dot_config/bin/dot_vscode/**
+
+# Generic transient artifacts
+**/__pycache__/**
+**/*.pyc
+**/*-journal
+**/dot_Cache/**
+**/dot_Code Cache/**
+**/dot_GPUCache/**
+**/dot_Crashpad/**
