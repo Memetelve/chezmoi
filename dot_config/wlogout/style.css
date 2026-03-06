@@ -1,0 +1,46 @@
+window {
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+button {
+  color: #d8d8d8;
+  background-image: none;
+  background-color: #000000;
+  border: 1px solid #a12e2e;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 4px;
+  padding: 0 8px;
+  min-width: 180px;
+  min-height: 30px;
+}
+
+button:hover,
+button:focus,
+button:active {
+  color: #ff3b3b;
+  background-color: #100000;
+  border-color: #ff3b3b;
+}
+
+button label {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+button span {
+  color: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#lock,
+#logout,
+#suspend,
+#shutdown,
+#reboot,
+#hibernate {
+  background-image: none;
+}
