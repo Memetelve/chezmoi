@@ -1,0 +1,90 @@
+/* ~/.config/rofi/wallpaper-grid.rasi */
+
+configuration {
+    show-icons: true;
+    should-icons-use-default: false;
+}
+
+* {
+    /* Colors - Catppuccin Mocha style */
+    bg: #1e1e2e;
+    fg: #cdd6f4;
+    accent: #89b4fa;
+    border: #313244;
+    selected-bg: #45475a;
+    
+    font: "JetBrainsMono Nerd Font 10";
+}
+
+window {
+    width: 980px;
+    height: 920px;
+    background-color: @bg;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+    children: [ "prompt", "entry" ];
+    background-color: @selected-bg;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+prompt {
+    background-color: @accent;
+    text-color: @bg;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 0 10px 0 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search Wallpapers...";
+    vertical-align: 0.5;
+}
+
+listview {
+    background-color: transparent;
+    columns: 2;
+    lines: 2;
+    spacing: 6px;
+    scrollbar: false;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg;
+    orientation: vertical;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+element selected {
+    background-color: @selected-bg;
+    border: 1px;
+    border-color: @accent;
+}
+
+element-icon {
+    size: 360px;
+    horizontal-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    margin: 2px 0 0 0;
+    horizontal-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+}
