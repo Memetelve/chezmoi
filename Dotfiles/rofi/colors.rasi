@@ -1,0 +1,13 @@
+* {
+    background-color:            #111826;
+    background-color-alt:        #141d2f;
+    background-color-elements:   #15213a;
+    border-color:                #223048;
+    text-color:                  #f7fbff;
+    text-color-alt:              #9aaed0;
+    foreground:                  #f7fbff;
+    selected:                    #18324c;
+    active:                      #0d7ca3;
+    active-alt:                  #4eb4a2;
+    urgent:                      #ff7b87;
+}

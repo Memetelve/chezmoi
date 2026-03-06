@@ -1,0 +1,210 @@
+@import "~/.config/rofi/colors.rasi"
+
+configuration {
+	modi: "drun,run,filebrowser,window";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-filebrowser: "Files";
+    display-window: "Windows";
+	drun-display-format: "{name}";
+	case-sensitive: false;
+	normalize-match: true;
+	icon-theme: "Tela-circle";
+    show-icons: true;
+	matching: "normal";
+	tokenize: true;
+	terminal: "kitty";
+	drun-categories: "";
+	drun-match-fields: "name,generic,exec,categories,keywords";
+	drun-show-actions: false;
+	drun-url-launcher: "xdg-open";
+	drun-use-desktop-cache: false;
+	drun-reload-desktop-cache: false;
+	drun {
+		parse-user:   true;
+		parse-system: true;
+    }
+	run-command: "{cmd}";
+	run-list-command: "";
+	run-shell-command: "{terminal} -e {cmd}";
+	run,drun {
+		fallback-icon: "application-x-addon";
+	}
+	window-match-fields: "title,class,role,name,desktop";
+	window-command: "wmctrl -i -R {window}";
+	window-format: "{w}  ·  {c}";
+	window-thumbnail: false;
+	disable-history: false;
+	sorting-method: "normal";
+	max-history-size: 25;
+    filebrowser {
+	  directory: "$HOME";
+      directories-first: true;
+      sorting-method: "name";
+    }
+}
+
+* {
+    font:                        "Fira Sans 10";
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       820px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    padding:                     16px;
+    enabled:                     true;
+    border:                      1px solid;
+    border-radius:               18px;
+    cursor:                      "default";
+    border-color:                @border-color;
+    background-color:            @background-color;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     12px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     10px 14px;
+    border:                      1px solid;
+    border-radius:               14px;
+    border-color:                @border-color;
+    background-color:            @background-color-alt;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     6px 10px;
+    border-radius:               999px;
+    background-color:            @active;
+    text-color:                  @text-color;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search applications, commands, files, and windows";
+    placeholder-color:           @text-color-alt;
+    vertical-align:              0.5;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       10;
+    cycle:                       true;
+    dynamic:                     false;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    padding:                     0px;
+    spacing:                     4px;
+    margin:                      0px;
+    border:                      0px solid;
+    background-color:            transparent;
+    text-color:                  @text-color;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     8px 10px;
+    border:                      1px solid;
+    border-color:                transparent;
+    border-radius:               14px;
+    background-color:            transparent;
+    text-color:                  @text-color;
+    cursor:                      inherit;
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color:            transparent;
+    text-color:                  @text-color;
+}
+
+element.normal.active {
+    background-color:            @selected;
+    text-color:                  @text-color;
+}
+
+element selected.normal {
+    background-color:            @background-color-elements;
+    border-color:                @active;
+    text-color:                  @text-color;
+}
+
+element selected.active {
+    background-color:            @selected;
+    border-color:                @active-alt;
+    text-color:                  @text-color;
+}
+
+element-icon {
+    background-color:            transparent;
+    size:                        22px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+mode-switcher {
+    enabled:                     true;
+    spacing:                     8px;
+    background-color:            transparent;
+    text-color:                  @text-color;
+}
+
+button {
+    padding:                     6px 11px;
+    border:                      0px;
+    border-radius:               999px;
+    background-color:            @background-color-elements;
+    text-color:                  @text-color-alt;
+    cursor:                      pointer;
+}
+
+button selected {
+    background-color:            @active;
+    text-color:                  @text-color;
+}
+
+message {
+    background-color:            transparent;
+    border:                      0px solid;
+}
+
+textbox,
+error-message {
+    background-color:            transparent;
+    text-color:                  @text-color;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
